@@ -4,22 +4,22 @@
 
 <nav>
     <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Work</a></li>
-        <li><a href="#">Last</a></li>
-        <li><a href="#">About</a></li>
+        <li>Anasayfa</li>
+        <li>Hakkında</li>
     </ul>
 </nav>
 
 <style lang="scss">
     nav{
         ul{
+           height: calc(8vh);
            display: flex;
            list-style-type: none;
            gap: 15px;
+           justify-content: flex-end;
            li{
                 a{
-                    font-size: 1.2em;
+                    font-size: 1.4em;
                     text-decoration: none;
                     color: black;
                 }
