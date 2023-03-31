@@ -32,7 +32,10 @@
             
             gap: 10px;
             div{
-                padding: 130px;
+                // padding: 100px;
+                padding-top: 135px;
+                padding-bottom: 135px;
+
                 box-shadow: rgba(149, 157, 155, 0.2) 8px 8px 24px;
                 
             }
