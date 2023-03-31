@@ -7,21 +7,20 @@
 		console.log(response)
     return await response.json()
 	})()
-	
 </script>
 
 <div>
 	<!-- {JSON.stringify(fetchImage)} -->
-<!-- 
-	{#await fetchImage}
-	<p>...waiting</p>
-{:then data}
-	{data.firstName}
-	{data.lastName} 
-	{data.Age} 
-{:catch error}
-	<p>An error occurred!</p>
-{/await} -->
+	<!-- 
+		{#await fetchImage}
+		<p>...waiting</p>
+	{:then data}
+		{data.firstName}
+		{data.lastName} 
+		{data.Age} 
+	{:catch error}
+		<p>An error occurred!</p>
+	{/await} -->
 
 	<header>
 		<Nav />
