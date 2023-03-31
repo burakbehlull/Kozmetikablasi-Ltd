@@ -1,6 +1,4 @@
 <script lang="ts">
-
-
 </script>
 
 <section>
@@ -21,9 +19,7 @@
         height: calc(100vh);
         display: grid;
         row-gap: 10px;
-        div{
-            border-radius: 30px;
-        }
+
         .box-one{
             display: grid;
             grid-template-areas:
@@ -32,15 +28,12 @@
             
             gap: 10px;
             div{
-                // padding: 100px;
-                padding-top: 135px;
-                padding-bottom: 135px;
-
+                padding-top: 20%;
+                padding-bottom: 20%;
                 box-shadow: rgba(149, 157, 155, 0.2) 8px 8px 24px;
-                
+                border-radius: 30px;                      
             }
             div:nth-child(1){
-               
                 grid-area: ONE;
                 background-color: aqua;
             }
