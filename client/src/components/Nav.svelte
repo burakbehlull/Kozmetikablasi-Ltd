@@ -1,10 +1,24 @@
 <script lang="ts">
-
+	let data;
+	const getData = async()=> {
+		const response = await fetch('http://127.0.0.1:5000/api')
+		const jsonData = await response.json()
+		data = jsonData
+		console.log(jsonData)
+	}
+	getData()
 </script>
 
 <nav>
     <ul>
-        <li class="page-title"><a href="/">Page Title</a></li>
+        <li class="page-title"><a href="/">
+        {#if data}
+        {data[0].title}
+        {:else}
+        Kozmetik Abla
+        {/if}
+        </a></li>
+
         <li><a href="/home">Home</a></li>
         <li><a href="/home">Works</a></li>
         <li><a href="/home">Contact</a></li>

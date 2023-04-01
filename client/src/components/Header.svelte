@@ -26,16 +26,17 @@
             display: grid;
             grid-template-areas:
             'ONE ONE TWO THREE';
-            grid-template-columns: repeat(auto-fit, minmax(100px, 4fr));
+            grid-template-columns: repeat(auto-fit, minmax(10px, 4fr));
 
             gap: 10px;
             
             %imgTemplate{
+                height: 90%;
+                width: 100%;
                 border-radius: 30px;
                 box-shadow: rgba(149, 157, 155, 0.2) 8px 8px 24px;
-                height: 95%;
-                width: 100%;
             }
+            
             img:nth-child(1){
                 @extend %imgTemplate;
                 grid-area: ONE;
