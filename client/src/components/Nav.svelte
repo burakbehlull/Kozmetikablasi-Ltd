@@ -1,12 +1,12 @@
 <script lang="ts">
 	let data;
-	const getData = async()=> {
-		const response = await fetch('http://127.0.0.1:5000/api')
+	const getSettings = async()=> {
+		const response = await fetch('http://127.0.0.1:5000/api/settings')
 		const jsonData = await response.json()
 		data = jsonData
 		console.log(jsonData)
 	}
-	getData()
+	getSettings()
 </script>
 
 <nav>

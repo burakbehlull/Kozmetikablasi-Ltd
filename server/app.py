@@ -1,11 +1,10 @@
-from flask import Flask, request, jsonify, url_for, redirect
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS, cross_origin
 import mysql.connector
 
 app = Flask(__name__)
 cors = CORS(app)  
 
-frontend_link = 'http://localhost:8080'
 
 mydb = mysql.connector.connect(
     host= "127.0.0.1",
@@ -16,13 +15,12 @@ mydb = mysql.connector.connect(
 cursor = mydb.cursor(dictionary=True)
 
 
-
 @app.route('/')
 @cross_origin()
 def index():
     return "<h1>INDEX</h1>"
 
-@app.route('/api')
+@app.route('/api/settings')
 @cross_origin()
 def getUser():
     cursor.execute("SELECT * FROM site_settings")
@@ -30,17 +28,27 @@ def getUser():
     
     return jsonify(site_settings)
 
-@app.route('/update', methods=['POST', 'GET'])
+@app.route('/dashboard')
+def dashboard():
+    return render_template('index.html')
+
+@app.route('/api/settings/update', methods=['POST', 'GET'])
 @cross_origin()
-def update():
+def settingsUpdate():
     if request.method == 'POST':
         title = request.form.get('title')
         subtitles = request.form.get('subtitles')
-        data_update = f"UPDATE site_settings SET title = '{title}' WHERE subtitles = '{subtitles}'"
-        cursor.execute(data_update)
-        mydb.commit()
         
-    return redirect(url_for(frontend_link))
+        title_update = f"UPDATE site_settings SET title = '{title}' WHERE id = 1"
+        subtitles_update = f"UPDATE site_settings SET subtitles = '{subtitles}' WHERE id = 1"
+        
+        cursor.execute(title_update)
+        cursor.execute(subtitles_update)
+        mydb.commit()
+        return "basirili"
+    else:
+        return "basirisiz"
+        
 
 if __name__ == "__main__":
     app.run(debug=True)

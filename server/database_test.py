@@ -8,13 +8,13 @@ mydb = mysql.connector.connect(
 )  
 mycursor = mydb.cursor()
 
-# mycursor.execute('CREATE DATABASE kozmetikablaDB')
-# mycursor.execute("CREATE TABLE site_settings (title VARCHAR(255), subtitles VARCHAR(255))")
+# DATABASE YARATILDI
+# mycursor.execute('CREATE DATABASE kozmetikablaDB') 
 
-sql = "INSERT INTO site_settings (title, subtitles) VALUES (%s, %s)"
-val = ("Kozmetik Abla", "Test")
-mycursor.execute(sql, val)
+# BİR TABLO YARATILDI VE İÇERİSİNE DEĞER BASLIKLARI OLUSTURULDU
+# mycursor.execute("CREATE TABLE site_settings (id INT AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255), subtitles VARCHAR(255))");
 
-mydb.commit()
 
-print(mycursor.rowcount, "record inserted.")
+# mycursor.execute("DROP TABLE site_settings");
+
+# mydb.commit()
