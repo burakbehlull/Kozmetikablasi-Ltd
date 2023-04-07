@@ -1,25 +1,14 @@
 <script lang="ts">
-	import { onMount } from 'svelte'
-  	import Header from "./components/Header.svelte";
-  	import Nav from "./components/Nav.svelte";
-
-	onMount(()=>{
-		document.title = "Kozmetik Abla"
-	})
-
+	import {Route, Router} from 'svelte-navigator'
+	import Home from "./Home.svelte";
 </script>
 
-<div>
-	<header>
-		<Nav />
-	</header>
-	
-	<main>	
-		<Header />
-	</main>
-</div>
+<Router>
+	<Route path="/">
+		<Home />
+	</Route>
 
-<style lang="scss">
-	
-
-</style>
+	<Route path="*">
+		<h1>404</h1>
+	</Route>
+</Router>
